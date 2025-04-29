@@ -6,8 +6,8 @@ metadata:
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
-  url: https://github.com/Wescoair/ics-service-manifest.git
+  url: <github_URL>
   username: svc-incora-git
-  password: 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
+  password: <github_token>
   type: git
 

@@ -1,0 +1,41 @@
+# PVC for MSDS
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ics-msds-pvc
+  namespace: ics-service-dev
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azure-file
+  resources:
+    requests:
+      storage: 10Gi
+---
+# PVC for Receipt Images
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ics-receiptimages-pvc
+  namespace: ics-service-dev
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azure-file
+  resources:
+    requests:
+      storage: 10Gi
+---
+# PVC for Document Images
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ics-docimages-pvc
+  namespace: ics-service-dev
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: azure-file
+  resources:
+    requests:
+      storage: 10Gi

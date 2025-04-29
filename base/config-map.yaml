@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ics-service-config
+  namespace: ics-service-dev
+  labels:
+    app: ics-service
+data:
+  SPRING_DATASOURCE_URL: jdbc:oracle:thin:@//your-oracle-server.database.azure.com:1521/ICSDEV
+  SPRING_DATASOURCE_USERNAME: ics_admin
+  MSDS_DOC_PATH: /msds
+  RECEIPTIMAGES_DOC_PATH: /receiptimages
+  DOCIMAGES_DOC_PATH: /docimages
+ 

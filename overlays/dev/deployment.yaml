@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ics-service
+  name: ics-service
+spec:
+  template:
+    spec:
+      containers:
+      - name: ics-service
+        image: <+artifact.image>
+        volumeMounts:
+        - name: ics-service-msds-nfs-pv
+          mountPath: /msds
+        - name: ics-service-receiptimages-nfs-pv
+          mountPath: /receiptimages
+        - name: ics-service-docimages-nfs-pv
+          mountPath: /docimages
+      volumes:
+      - name: ics-service-msds-nfs-pv
+        persistentVolumeClaim:
+          claimName: ics-service-dev-msds-nfs-pv-claim
+      - name: ics-service-receiptimages-nfs-pv
+        persistentVolumeClaim:
+          claimName: ics-service-dev-receiptimages-nfs-pv-claim
+      - name: ics-service-docimages-nfs-pv
+        persistentVolumeClaim:
+          claimName: ics-service-dev-docimages-nfs-pv-claim

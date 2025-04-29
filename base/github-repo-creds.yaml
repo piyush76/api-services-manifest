@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-repo-creds
+  namespace: argo
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/Wescoair/ics-service-manifest.git
+  username: svc-incora-git
+  password: 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
+  type: git
+

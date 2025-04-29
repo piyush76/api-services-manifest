@@ -1,0 +1,11 @@
+# This Kustomization file is ignored inside the Harness.io platform.
+# Pipeline configuration replaces this kustomization and will perform
+# variable substitution for Harness expressions in the patch files.
+
+resources:
+- persistent-volumes.yaml
+- persistent-volume-claims.yaml
+- ../../base
+
+patchesStrategicMerge:
+- deployment.yaml

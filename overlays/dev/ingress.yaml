@@ -15,14 +15,14 @@ spec:
       http:
         paths:
           - path: /chemicals/api(/|$)(.*)
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: ics-service
                 port:
                   number: 9090
           - path: /actuator(/|$)(.*)
-            pathType: Prefix
+            pathType: ImplementationSpecific
             backend:
               service:
                 name: ics-service

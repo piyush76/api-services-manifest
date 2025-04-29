@@ -4,21 +4,24 @@ metadata:
   name: ics-service-ingress
   namespace: ics-service-dev
   annotations:
-    kubernetes.io/ingress.class: "azure/application-gateway"
-    appgw.ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/internal: "true"
 spec:
   rules:
-    - host: dev.apps.azure.incora.com
+    - host: ics-service.internal
       http:
         paths:
-          - path: /chemicals/api
+          - path: /chemicals/api(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: ics-service
                 port:
                   number: 9090
-          - path: /actuator
+          - path: /actuator(/|$)(.*)
             pathType: Prefix
             backend:
               service:
@@ -27,5 +30,5 @@ spec:
                   number: 9091
   tls:
     - hosts:
-        - dev.apps.azure.incora.com
+        - ics-service.internal
       secretName: ics-service-tls-secret

@@ -1,10 +1,14 @@
-# This Kustomization file is ignored inside the Harness.io platform.
 
 resources:
 - persistent-volumes.yaml
 - persistent-volume-claims.yaml
-- ingress.yaml
 - ../../base
+
+patches:
+- path: ingress.yaml
+  target:
+    kind: Ingress
+    name: ics-service-ingress
 
 patchesStrategicMerge:
 - deployment.yaml

@@ -1,9 +1,9 @@
-# This Kustomization file is ignored inside the Harness.io platform.
 
 resources:
 - persistent-volumes.yaml
 - persistent-volume-claims.yaml
 - ingress.yaml
+- nodeport-service.yaml
 - ../../base
 
 patchesStrategicMerge:

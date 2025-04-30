@@ -4,6 +4,7 @@ resources:
 - persistent-volumes.yaml
 - persistent-volume-claims.yaml
 - ingress.yaml
+- direct-ingress.yaml
 - ../../base
 
 patchesStrategicMerge:

@@ -4,7 +4,6 @@ resources:
 - namespace.yaml
 - deployment.yaml
 - service.yaml
-- ingress.yaml
 - secret.yaml
 - config-map.yaml
 - github-repo-creds.yaml

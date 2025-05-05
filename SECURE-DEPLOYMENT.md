@@ -61,8 +61,8 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
     
-    # IP whitelisting - replace with your allowed IPs
-    nginx.ingress.kubernetes.io/whitelist-source-range: "10.61.6.32/27,10.0.0.0/16"
+    # IP whitelisting (optional) - uncomment and replace with your allowed IPs if needed
+    # nginx.ingress.kubernetes.io/whitelist-source-range: "<ALLOWED_IP_RANGES>"
     
     # Basic auth
     nginx.ingress.kubernetes.io/auth-type: "basic"

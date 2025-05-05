@@ -1,8 +1,8 @@
-
 resources:
 - persistent-volumes.yaml
 - persistent-volume-claims.yaml
 - ingress-external.yaml
+- basic-auth-secret.yaml
 - ../../base
 
 patchesStrategicMerge:

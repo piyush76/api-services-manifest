@@ -7,22 +7,13 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: /$1
     nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/whitelist-source-range: "10.61.6.32/27,10.0.0.0/16"
-    nginx.ingress.kubernetes.io/auth-type: "basic"
-    nginx.ingress.kubernetes.io/auth-secret: "ics-basic-auth"
-    nginx.ingress.kubernetes.io/auth-realm: "Authentication Required"
-    nginx.ingress.kubernetes.io/limit-connections: "10"
-    nginx.ingress.kubernetes.io/limit-rps: "5"
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    # nginx.ingress.kubernetes.io/auth-type: "basic"
 spec:
-  tls:
-  - hosts:
-    - ics-service.dev.apps.azure.incora.com
-    secretName: ics-service-tls
+  # tls:
+  # - hosts:
   rules:
-    - host: ics-service.dev.apps.azure.incora.com
-      http:
+    - http:
         paths:
           - path: /chemicals/api(/|$)(.*)
             pathType: ImplementationSpecific

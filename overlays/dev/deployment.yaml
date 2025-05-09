@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: ics-service
-        image: <+artifact.image>
+        image: incora.azurecr.io/ics-service:d22e942
         volumeMounts:
         - name: ics-service-msds-nfs-pv
           mountPath: /msds

@@ -5,5 +5,9 @@ resources:
 - basic-auth-secret.yaml
 - ../../base
 
-patchesStrategicMerge:
-- deployment.yaml
+patches:
+- path: deployment.yaml
+
+images:
+- name: incora.azurecr.io/ics-service
+  newTag: d22e942

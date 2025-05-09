@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ics-api-service
+  namespace: argocd  # The namespace where ArgoCD is installed
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/piyush76/api-services-manifest.git
+    targetRevision: HEAD
+    path: overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ics-service-dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

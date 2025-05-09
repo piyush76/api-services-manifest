@@ -9,7 +9,6 @@ spec:
     spec:
       containers:
       - name: ics-service
-        image: <+artifact.image>
         volumeMounts:
         - name: ics-service-msds-nfs-pv
           mountPath: /msds

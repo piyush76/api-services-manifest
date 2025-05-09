@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: ics-service
-          image: incora.azurecr.io/ics-service:d22e942
+          image: incora.azurecr.io/ics-service:latest
           imagePullPolicy: IfNotPresent
           resources: {}
           envFrom:

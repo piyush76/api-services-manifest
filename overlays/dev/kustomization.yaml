@@ -7,3 +7,7 @@ resources:
 
 patchesStrategicMerge:
 - deployment.yaml
+
+images:
+- name: incora.azurecr.io/ics-service
+  newTag: d22e942
